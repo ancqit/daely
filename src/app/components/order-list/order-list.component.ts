@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-order-list',
   templateUrl: './order-list.component.html',
-  styleUrls: ['./order-list.component.scss']
+  styleUrls: ['./order-list.component.scss'],
 })
-export class OrderListComponent implements OnInit {
+export class OrderListComponent implements OnInit, AfterViewInit {
+  @Input() orderList: any;
+  @Output() orderDetail = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  ngAfterViewInit(): void {
+    console.log(this.orderList);
   }
 
+  getItem(owner:any){
+    this.orderDetail.emit(owner);
+  }
 }
