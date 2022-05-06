@@ -1,9 +1,15 @@
-<div *ngFor="let owner of orderList" click="getItem(owner)"> 
+<div>
+<div *ngFor="let owner of orderList"  (click)="getItem(owner)"> 
+
+    
      <span> {{owner.mobile}} </span>
-     <p>
-        <span> status </span> {{owner.status}}
-     </p>
-     <p>
-         <span> slNo. </span> {{owner.orderNumber}}
-     </p>
+     
+        <span > status </span> {{owner.status}}
+     
+         <span > slNo. </span> {{owner.orderNumber}}
+
+         <button > detail</button>
+     
+     
+</div>
 </div>

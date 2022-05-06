@@ -7,8 +7,8 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  vegList: any;
-  vegListItem: any;
+  vegList: any=null;
+  vegListItem: any=null;
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
@@ -22,9 +22,11 @@ export class HomeComponent implements OnInit {
   orderDetail(owner: any) {
     console.log(owner);
     this.vegListItem = owner.items;
+    this.vegList=null;
   }
   OrderList(){
     this.showList();
+    this.vegListItem = null;
     
   }
 }

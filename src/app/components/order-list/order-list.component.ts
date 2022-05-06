@@ -18,6 +18,8 @@ export class OrderListComponent implements OnInit, AfterViewInit {
   }
 
   getItem(owner:any){
+    console.log(owner);
+    
     this.orderDetail.emit(owner);
   }
 }

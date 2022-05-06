@@ -1,1 +1,9 @@
 
+<div *ngFor="let veg of ownerItems">
+    {{veg.name}} 
+    <span>qty</span> {{veg.quantity}}
+    <span>rate</span> {{veg.rate}}
+    <span>total</span> {{veg.total}}
+
+</div>
+<button type="button" (click)="back()"> back</button>
