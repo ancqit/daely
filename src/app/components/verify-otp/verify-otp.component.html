@@ -1,1 +1,4 @@
 <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:6}"></ng-otp-input>
+<button *ngIf="verifyOtp" matSuffix mat-icon-button aria-label="Clear" >
+    <mat-icon>compare_arrows</mat-icon> Verify Otp
+  </button>
