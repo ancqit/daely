@@ -10,6 +10,8 @@ import { OrderDetailComponent } from './components/order-detail/order-detail.com
 import { TakeOrderComponent } from './components/take-order/take-order.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { SendOtpComponent } from './components/send-otp/send-otp.component';
+import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HomeComponent } from './components/home/home.component';
     OrderDetailComponent,
     TakeOrderComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    SendOtpComponent,
+    VerifyOtpComponent
   ],
   imports: [
     BrowserModule,
