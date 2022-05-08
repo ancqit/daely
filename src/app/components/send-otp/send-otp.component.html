@@ -1,1 +1,10 @@
-<p>send-otp works!</p>
+<mat-form-field class="example-form-field" appearance="fill">
+  <mat-label>Phone No.</mat-label>
+  <input matInput type="number" [(ngModel)]="value" placeholder="enterNumber" maxlength="10" (keyup)="getNumber()">
+  <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''" (keyup)="getNumber()">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+<button *ngIf="showOtp" matSuffix mat-icon-button aria-label="Clear" >
+    <mat-icon>backup</mat-icon> send Otp
+  </button>
