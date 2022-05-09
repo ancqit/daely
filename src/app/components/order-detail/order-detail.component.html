@@ -1,4 +1,4 @@
-
+   <h1>Current order</h1>
 <div *ngFor="let veg of ownerItems">
     {{veg.name}} 
     <span>qty</span> {{veg.quantity}}
@@ -6,4 +6,16 @@
     <span>total</span> {{veg.total}}
 
 </div>
+<h4>Basic mat-select</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Status</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<p>
 <button type="button" (click)="back()"> back</button>
+<button type="button" (click)="setStatus()"> Set Status</button>
+</p>

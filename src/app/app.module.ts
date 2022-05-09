@@ -20,6 +20,7 @@ import { NgOtpInputModule } from 'ng-otp-input';
 import { LoginTypeComponent } from './components/login-type/login-type.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { MatRadioModule } from '@angular/material/radio';
     NgOtpInputModule,
     MatChipsModule,
     MatRadioModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

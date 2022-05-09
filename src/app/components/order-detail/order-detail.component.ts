@@ -9,6 +9,12 @@ import { DataService } from 'src/app/services/data.service';
 export class OrderDetailComponent implements OnInit, AfterViewInit {
   @Input() ownerItems: any;
   @Output() orderList = new EventEmitter();
+  foods: Food[] = [
+    { value: '0', viewValue: 'Order Given' },
+    { value: '1', viewValue: 'Order Recieved' },
+    { value: '2', viewValue: 'Out for delivery' },
+    { value: '3', viewValue: 'Returns' },
+  ];
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {}
@@ -21,7 +27,15 @@ export class OrderDetailComponent implements OnInit, AfterViewInit {
     this.dataService.vegItems = owner.items;
   }
 
-  back(){
+  back() {
     this.orderList.emit();
   }
+
+  setStatus(){
+    this.orderList.emit();
+  }
+}
+interface Food {
+  value: string;
+  viewValue: string;
 }
