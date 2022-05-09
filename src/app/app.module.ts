@@ -17,6 +17,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { NgOtpInputModule } from 'ng-otp-input';
+import { LoginTypeComponent } from './components/login-type/login-type.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { NgOtpInputModule } from 'ng-otp-input';
     HomeComponent,
     SendOtpComponent,
     VerifyOtpComponent,
+    LoginTypeComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +47,8 @@ import { NgOtpInputModule } from 'ng-otp-input';
     MatIconModule,
     FormsModule,
     NgOtpInputModule,
+    MatChipsModule,
+    MatRadioModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
