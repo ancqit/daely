@@ -1,12 +1,17 @@
-   <h1>Current order</h1>
+   <h1>Current order</h1> 
+   <h3>Items</h3>
 <div *ngFor="let veg of ownerItems">
-    {{veg.name}} 
-    <span>qty</span> {{veg.quantity}}
-    <span>rate</span> {{veg.rate}}
-    <span>total</span> {{veg.total}}
+  <div class="itemList">  {{veg.name}} 
+    <span class="itemGrid">qty (in Kg)</span> {{veg.quantity}}
+    <span class="itemGrid">rate</span> {{veg.rate}}
+    <span class="itemGrid">total</span> {{veg.total}}
+    </div>
 
 </div>
-<h4>Basic mat-select</h4>
+<button type="button" (click)="getTotal()"> Get Total</button>
+<span *ngIf="totalValue>0"> {{totalValue}}
+</span> 
+<h4>Set Status</h4>
 <mat-form-field appearance="fill">
   <mat-label>Status</mat-label>
   <mat-select>

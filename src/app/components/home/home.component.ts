@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   }
   orderDetail(owner: any) {
     console.log(owner);
+    this.vegListItem = null;
     this.vegListItem = owner.items;
     this.vegList=null;
   }
