@@ -15,12 +15,12 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path:'login',
-    component:LoginComponent
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path:'order',
-    component:TakeOrderComponent
+    path: 'order',
+    component: TakeOrderComponent,
   }
 ];
 

@@ -9,6 +9,6 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'daely';
   constructor(private router:Router){
-    this.router.navigate(['login']);
+    this.router.navigate(['order']);
   }
 }

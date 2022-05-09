@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -7,9 +8,9 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  vegList: any=null;
-  vegListItem: any=null;
-  constructor(private dataService: DataService) {}
+  vegList: any = null;
+  vegListItem: any = null;
+  constructor(private dataService: DataService,private router: Router) {}
 
   ngOnInit(): void {
     this.showList();
@@ -23,11 +24,13 @@ export class HomeComponent implements OnInit {
     console.log(owner);
     this.vegListItem = null;
     this.vegListItem = owner.items;
-    this.vegList=null;
+    this.vegList = null;
   }
-  OrderList(){
+  OrderList() {
     this.showList();
     this.vegListItem = null;
-    
+  }
+  giveOrder(){
+    this.router.navigate(['order']);
   }
 }
