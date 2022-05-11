@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-send-otp',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./send-otp.component.scss'],
 })
 export class SendOtpComponent implements OnInit {
+  @Output() verifyOtp: EventEmitter<any> = new EventEmitter();
   value = '';
   showOtp: boolean = false;
   val: string = '';
@@ -18,9 +19,11 @@ export class SendOtpComponent implements OnInit {
     this.val = this.value.toString();
     if (this.val.length == 10) {
       this.showOtp = true;
-    }else {
-      this.showOtp= false;
+    } else {
+      this.showOtp = false;
     }
   }
-
+  showOtpMode(){
+    this.verifyOtp.emit();
+  }
 }

@@ -3,13 +3,22 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  pickType: boolean = false;
+  pickOtp: boolean=false;
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
+  loginType(value: any) {
+    console.log(value);
+    this.pickType = true;
 
-  ngOnInit(): void {
   }
-
+  verifyOtp(value:any){
+    console.log(value);
+    this.pickType= true;
+    this.pickOtp=true;
+  }
 }

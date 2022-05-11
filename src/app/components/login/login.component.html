@@ -1,5 +1,5 @@
 <div class="loginParent">
-<app-login-type class="loginType"></app-login-type>
-<app-send-otp class="sendOtp"></app-send-otp>
-<app-verify-otp class="verifyOtp"></app-verify-otp>
+<app-login-type class="loginType" (loginType)="loginType($event)"></app-login-type>
+<app-send-otp class="sendOtp" *ngIf="pickType" (verifyOtp)="verifyOtp($event)"></app-send-otp>
+<app-verify-otp class="verifyOtp" *ngIf="pickType && pickOtp"></app-verify-otp>
 </div>

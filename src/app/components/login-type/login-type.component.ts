@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-login-type',
@@ -6,9 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-type.component.scss'],
 })
 export class LoginTypeComponent implements OnInit {
-  favoriteSeason:string ='';
+  @Output() loginType: EventEmitter<any> = new EventEmitter();
+
+  favoriteSeason: string = '';
   seasons: string[] = ['Seller', 'Buyer', 'Delivery'];
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  change(value: any) {
+    console.log(value);
+    this.loginType.emit(value);
+  }
 }
