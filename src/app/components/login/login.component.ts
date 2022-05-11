@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   }
   verifyOtp(value:any){
     console.log(value);
-    this.pickType= true;
+    this.pickType= false;
     this.pickOtp=true;
   }
 }

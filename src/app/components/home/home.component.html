@@ -1,5 +1,7 @@
-<app-order-list [ngClass]="vegList? 'show':'hide'" [orderList]="vegList" (orderDetail)="orderDetail($event)"></app-order-list>
+<div class="container">
+<app-order-list [ngClass]="vegList? 'show':'hide'" [orderList]="vegList" (orderDetail)="orderDetail($event)" class="col-flex"></app-order-list>
 
 <app-order-detail [ngClass]="vegListItem? 'show':'hide'" [ownerItems]="vegListItem" (orderList)="OrderList()"></app-order-detail>
 
-<button type="button" (click)="giveOrder()">Give Order</button>
+<button type="button" (click)="giveOrder()" class="buttonOrder">Give Order</button>
+</div>

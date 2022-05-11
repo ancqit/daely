@@ -1,7 +1,16 @@
-.show{
+@import "../../../assets/mixins";
+
+.container{
+   @include flexplay;
+    
+    .show{
     display: inline;
 }
 
 .hide{
     display:none;
+}
+
+
+
 }
