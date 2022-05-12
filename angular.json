@@ -109,6 +109,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "daely:build:production",
+            "firebaseProject": "testmart-8a099",
+            "firebaseHostingSite": "testmart-8a099"
+          }
         }
       }
     }

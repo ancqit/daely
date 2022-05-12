@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "testmart-8a099": {
+      "hosting": {
+        "daely": [
+          "testmart-8a099"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "testmart-8a099"
+  }
+}
