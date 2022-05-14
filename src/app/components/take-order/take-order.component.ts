@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService, ItemInCart, OrderInBasket } from 'src/app/services/data.service';
 
 @Component({
@@ -90,15 +91,15 @@ export class TakeOrderComponent implements OnInit {
   ];
   value: any;
   valueQuantity: any;
-  sizeOfOrder:any=0;
-  itemesInCart: any=[];
-  basket:ItemInCart={
-    name:'',
-    rate:0,
-    quantity:0,
-    total:0
+  sizeOfOrder: any = 0;
+  itemesInCart: any = [];
+  basket: ItemInCart = {
+    name: '',
+    rate: 0,
+    quantity: 0,
+    total: 0,
   };
-  constructor(public dataService: DataService) {}
+  constructor(public dataService: DataService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -109,9 +110,7 @@ export class TakeOrderComponent implements OnInit {
   getNumber() {
     console.log(this.value);
   }
-  getNumberQuantity(){
-
-  }
+  getNumberQuantity() {}
 
   addVegetables() {
     let total,
@@ -121,18 +120,34 @@ export class TakeOrderComponent implements OnInit {
         quantity: 0,
         total: 0,
       };
-    
+
     this.items.forEach((element: { name: any; rate: any }) => {
       if (element.name === this.value) {
-        basket.name= this.value;
-        basket.rate= element.rate;
-        basket.quantity=this.valueQuantity;
+        basket.name = this.value;
+        basket.rate = element.rate;
+        basket.quantity = this.valueQuantity;
         total = element.rate * this.valueQuantity;
-       basket.total=total;
+        basket.total = total;
         console.log(total);
-        this.sizeOfOrder=this.sizeOfOrder+total;
-        this.itemesInCart.push(basket); 
+        this.sizeOfOrder = this.sizeOfOrder + total;
+        this.itemesInCart.push(basket);
       }
     });
+  }
+
+  takeOrder() {
+    this.router.navigate(['home']);
+  }
+  delete(items: any, i: any) {
+    console.log(items);
+    this.itemesInCart[i] = {};
+    if (items.total) this.sizeOfOrder = this.sizeOfOrder - items.total;
+    //  this.itemesInCart.filter((element:any)=>{
+    //    element.
+    //  })
+    document.getElementById(i)?.remove();
+  }
+  back() {
+    this.router.navigate(['home']);
   }
 }

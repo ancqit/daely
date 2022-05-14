@@ -1,17 +1,30 @@
    <h1>Current order</h1> 
    <h3>Items</h3>
-<div *ngFor="let veg of ownerItems">
-  <div class="itemList">  {{veg.name}} 
-    <span class="itemGrid">qty (in Kg)</span> {{veg.quantity}}
-    <span class="itemGrid">rate</span> {{veg.rate}}
-    <span class="itemGrid">total</span> {{veg.total}}
-    </div>
 
-</div>
-<button type="button" (click)="getTotal()"> Get Total</button>
-<span *ngIf="totalValue>0"> {{totalValue}}
+
+<table class="table table-striped">
+  <thead class="thead-dark ">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Quantity (in kg)</th>
+      <th scope="col">Rate</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let veg of ownerItems">
+      <th scope="row">{{veg.name}}</th>
+      <td>{{veg.quantity}}</td>
+      <td>{{veg.rate}}</td>
+      <td>{{veg.total}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="getTotalButton" type="button" (click)="getTotal()" *ngIf="!totalValue"> Get Total</button>
+<span *ngIf="totalValue>0">Total : {{totalValue}}
 </span> 
-<h4>Set Status</h4>
+<h4 class="getTotalButton"> Set Status</h4>
 <mat-form-field appearance="fill">
   <mat-label>Status</mat-label>
   <mat-select>

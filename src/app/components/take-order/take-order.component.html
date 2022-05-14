@@ -9,18 +9,39 @@
 </mat-form-field>
 <mat-form-field class="example-form-field" appearance="fill">
   <mat-label>Quantity</mat-label>
-  <input matInput type="number" [(ngModel)]="valueQuantity" placeholder="enterNumber" (keyup)="getNumberQuantity()">
-  <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''" (keyup)="getNumberQuantity()">
-    <mat-icon>close</mat-icon>
-  </button>
+  <input matInput type="number" [(ngModel)]="valueQuantity" placeholder="enterNumber" (keyup)="getNumberQuantity()" autocomplete="off" /> 
+  
 </mat-form-field>
 <button type="button" (click)="addVegetables()">
     Add
   </button>
-<div *ngFor="let items of itemesInCart">
+<!-- <div *ngFor="let items of itemesInCart">
 <p>name :<span>{{items.name}}</span></p>
 <p>rate<span>{{items.rate}}</span></p>
 <p>quantity<span>{{items.quantity}}</span></p>
-</div>
+</div> -->
+<table class="table table-striped">
+  <thead class="thead-dark ">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Quantity (in kg)</th>
+      <th scope="col">Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let items of itemesInCart;index as i">
+      <th scope="row">{{items.name}}</th>
+      <td>{{items.quantity}}</td>
+      <td>{{items.rate}}</td>
+      <td><button (click)="delete(items,i)" *ngIf="items.total" >delete</button></td>
+    </tr>
+  </tbody>
+</table>
 <span *ngIf="sizeOfOrder>0"> Total : {{sizeOfOrder}}</span>
-  
+<p>
+  <button (click)="back()" >back</button>
+  <button type="button" (click)="takeOrder()" *ngIf="sizeOfOrder>0">
+    Order
+  </button>
+</p>
+
