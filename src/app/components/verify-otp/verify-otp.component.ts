@@ -24,6 +24,6 @@ export class VerifyOtpComponent implements OnInit {
   }
 
   verifyOtpMode(){
-    this.router.navigate(['home']);
+   if(confirm('please remember this!'))this.router.navigate(['home']);
   }
 }
