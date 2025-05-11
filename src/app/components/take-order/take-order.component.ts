@@ -1,4 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatOption } from '@angular/material/core';
+import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
+import { MatSelect } from '@angular/material/select';
 import { Router } from '@angular/router';
 import { DataService, ItemInCart, OrderInBasket } from 'src/app/services/data.service';
 
@@ -6,6 +12,7 @@ import { DataService, ItemInCart, OrderInBasket } from 'src/app/services/data.se
   selector: 'app-take-order',
   templateUrl: './take-order.component.html',
   styleUrls: ['./take-order.component.scss'],
+  imports:[MatLabel,MatOption,MatFormFieldModule,MatSelect,CommonModule,MatInput,FormsModule]
 })
 export class TakeOrderComponent implements OnInit {
   items: any = [

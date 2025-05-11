@@ -1,10 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatOption } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelect } from '@angular/material/select';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-order-detail',
   templateUrl: './order-detail.component.html',
   styleUrls: ['./order-detail.component.scss'],
+  imports:[MatOption,FormsModule,MatSelect,MatFormFieldModule,CommonModule]
 })
 export class OrderDetailComponent implements OnInit, AfterViewInit {
   @Input() ownerItems:any;

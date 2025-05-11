@@ -77,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "daely:build:production"
+              "buildTarget": "daely:build:production"
             },
             "development": {
-              "browserTarget": "daely:build:development"
+              "buildTarget": "daely:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +88,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "daely:build"
+            "buildTarget": "daely:build"
           }
         },
         "test": {
@@ -124,6 +124,5 @@
         }
       }
     }
-  },
-  "defaultProject": "daely"
+  }
 }

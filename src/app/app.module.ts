@@ -31,15 +31,15 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    OrderListComponent,
-    OrderDetailComponent,
-    TakeOrderComponent,
-    LoginComponent,
-    HomeComponent,
-    SendOtpComponent,
-    VerifyOtpComponent,
-    LoginTypeComponent,
+    // AppComponent,
+    // OrderListComponent,
+    // OrderDetailComponent,
+    // TakeOrderComponent,
+    // LoginComponent,
+    // HomeComponent,
+    // SendOtpComponent,
+    // VerifyOtpComponent,
+    // LoginTypeComponent,
   ],
   imports: [
     BrowserModule,

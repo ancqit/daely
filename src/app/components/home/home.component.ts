@@ -1,16 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
+import { OrderDetailComponent } from '../order-detail/order-detail.component';
+import { OrderListComponent } from '../order-list/order-list.component';
+import { CommonModule, NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  imports: [
+    OrderDetailComponent,
+    OrderListComponent,
+    RouterModule,
+    CommonModule,
+    NgClass
+  ],
 })
 export class HomeComponent implements OnInit {
   vegList: any = null;
   vegListItem: any = null;
-  constructor(private dataService: DataService,private router: Router) {}
+  constructor(private dataService: DataService, private router: Router) {}
 
   ngOnInit(): void {
     this.showList();
@@ -30,7 +40,7 @@ export class HomeComponent implements OnInit {
     this.showList();
     this.vegListItem = null;
   }
-  giveOrder(){
+  giveOrder() {
     this.router.navigate(['order']);
   }
 }

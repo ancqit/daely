@@ -1,9 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-order-list',
   templateUrl: './order-list.component.html',
   styleUrls: ['./order-list.component.scss'],
+  imports:[CommonModule]
 })
 export class OrderListComponent implements OnInit, AfterViewInit {
   @Input() orderList: any;
